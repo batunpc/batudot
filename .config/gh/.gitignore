@@ -1,1 +1,3 @@
-config.yml, hosts.yml
+config.yml
+hosts.yml
+.gitignore
