@@ -19,6 +19,7 @@ plugins=(zsh-syntax-highlighting git)
 export ZSH="$HOME/.config/zsh/.oh-my-zsh"
 export GIT_CONFIG=~/.config/gh/.gitconfig
 export VIMINIT="source ~/.config/vim/.vimrc"
+export LESSHISTFILE=-
 
 export HISTFILE=~/.config/zsh/.zsh_history
 export HISTSIZE=1000000   # the number of items for the internal history list
@@ -32,6 +33,7 @@ setopt EXTENDED_HISTORY  # record command start time
 ZSH_THEME="agnoster"
 DISABLE_AUTO_TITLE="true"
 SHELL_SESSIONS_DISABLE=1
+
 
 # LS colors direction to find the sh file 
 source ~/.config/.LS_COLORS/lscolors.sh
@@ -47,7 +49,7 @@ source ~/.config/powerlevel10k/powerlevel10k.zsh-theme
 alias ls="exa"
 alias cat="bat"
 alias grep='grep --color=auto'
-alias config='git --git-dir=/Users/batu/.dotfiles/ --work-tree=/Users/batu/.config'
+alias config='git --git-dir=/Users/batu/Documents/.dotfiles/ --work-tree=/Users/batu/.config'
 
 source $HOME/.config/zsh/.p10k.zsh
 # ===============================================================================
