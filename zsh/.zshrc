@@ -18,7 +18,7 @@ plugins=(zsh-syntax-highlighting git)
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.config/zsh/.oh-my-zsh"
 export GIT_CONFIG=~/.config/gh/.gitconfig
-export VIMINIT="source ~/.config/vim/.vimrc"
+#export VIMINIT="source ~/.config/vim/.vimrc"
 export LESSHISTFILE=-
 
 export HISTFILE=~/.config/zsh/.zsh_history
@@ -55,3 +55,5 @@ source $HOME/.config/zsh/.p10k.zsh
 # ===============================================================================
 
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -17,3 +17,12 @@
 	smudge = git-lfs smudge -- %f
 	
 log-standup = !git log --since yesterday --pretty=short --author `git config user.email`
+[core]
+	eol = lf
+	autocrlf = false
+[fsck]
+	zeroPaddedFilemode = ignore
+[fetch "fsck"]
+	zeroPaddedFilemode = ignore
+[receive "fsck"]
+	zeroPaddedFilemode = ignore
