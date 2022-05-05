@@ -1,12 +1,14 @@
+local present, lspconfig = pcall(require, "lspconfig")
+
+if not present then
+   return
+end
+
 local M = {}
 
 require("plugins.configs.others").lsp_handlers()
 
-function M.on_attach(client, bufnr)
-   local function buf_set_option(...)
-      vim.api.nvim_buf_set_option(bufnr, ...)
-   end
-
+function M.on_attach(client, _)
    client.resolved_capabilities.document_formatting = false
    client.resolved_capabilities.document_range_formatting = false
 
@@ -27,6 +29,27 @@ capabilities.textDocument.completion.completionItem.resolveSupport = {
       "documentation",
       "detail",
       "additionalTextEdits",
+   },
+}
+
+lspconfig.sumneko_lua.setup {
+   on_attach = M.on_attach,
+   capabilities = capabilities,
+
+   settings = {
+      Lua = {
+         diagnostics = {
+            globals = { "vim" },
+         },
+         workspace = {
+            library = {
+               [vim.fn.expand "$VIMRUNTIME/lua"] = true,
+               [vim.fn.expand "$VIMRUNTIME/lua/vim/lsp"] = true,
+            },
+            maxPreload = 100000,
+            preloadFileSize = 10000,
+         },
+      },
    },
 }
 
