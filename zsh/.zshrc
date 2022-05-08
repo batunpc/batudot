@@ -20,7 +20,8 @@ export ZSH="$HOME/.config/zsh/.oh-my-zsh"
 export GIT_CONFIG=~/.config/gh/.gitconfig
 #export VIMINIT="source ~/.config/vim/.vimrc"
 export LESSHISTFILE=-
-
+MYSQL_HISTFILE=-
+ZDOTDIR=~/.config/zsh/zcompdump
 export HISTFILE=~/.config/zsh/.zsh_history
 export HISTSIZE=1000000   # the number of items for the internal history list
 export SAVEHIST=1000000   # maximum number of items for the history file

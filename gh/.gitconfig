@@ -26,3 +26,5 @@ log-standup = !git log --since yesterday --pretty=short --author `git config use
 	zeroPaddedFilemode = ignore
 [receive "fsck"]
 	zeroPaddedFilemode = ignore
+[oh-my-zsh]
+	lastVersion = aeb8a77ec2b304796d95800c55fa248e89044667
