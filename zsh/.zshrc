@@ -47,6 +47,7 @@ source $ZSH/oh-my-zsh.sh
 # path to p10k
 source ~/.config/powerlevel10k/powerlevel10k.zsh-theme
 
+alias :q=exit # to exit the terminal mode in nvim
 alias ls="exa"
 alias cat="bat"
 alias grep='grep --color=auto'
