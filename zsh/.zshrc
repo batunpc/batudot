@@ -16,6 +16,7 @@ plugins=(zsh-syntax-highlighting git)
 # ===============================================================================
 # === Settings to not change ===
 # Path to your oh-my-zsh installation.
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 export ZSH="$HOME/.config/zsh/.oh-my-zsh"
 export GIT_CONFIG=~/.config/gh/.gitconfig
 #export VIMINIT="source ~/.config/vim/.vimrc"
