@@ -15,6 +15,7 @@ plugins=(zsh-syntax-highlighting git)
 
 # ===============================================================================
 # === Settings to not change ===
+export HOMEBREW_NO_ANALYTICS=1
 # Path to your oh-my-zsh installation.
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 export ZSH="$HOME/.config/zsh/.oh-my-zsh"
@@ -60,3 +61,4 @@ source $HOME/.config/zsh/.p10k.zsh
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
