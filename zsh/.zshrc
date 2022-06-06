@@ -62,3 +62,4 @@ source $HOME/.config/zsh/.p10k.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+eval "$(pyenv init --path)"
