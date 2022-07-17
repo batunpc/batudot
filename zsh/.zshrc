@@ -15,7 +15,7 @@ plugins=(zsh-syntax-highlighting git)
 
 # ===============================================================================
 # === Settings to not change ===
-export MallocStackLogging=1 # for leaks debugging
+#export MallocStackLogging=1 # for leaks debugging
 export HOMEBREW_NO_ANALYTICS=1
 # Path to your oh-my-zsh installation.
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'

@@ -20,6 +20,7 @@ log-standup = !git log --since yesterday --pretty=short --author `git config use
 [core]
 	eol = lf
 	autocrlf = false
+	hooksPath = .husky
 [fsck]
 	zeroPaddedFilemode = ignore
 [fetch "fsck"]
@@ -27,7 +28,9 @@ log-standup = !git log --since yesterday --pretty=short --author `git config use
 [receive "fsck"]
 	zeroPaddedFilemode = ignore
 [oh-my-zsh]
-	lastVersion = b1668dbaeb00a70e93a076d34513ea7cd2894143
+	lastVersion = f7dc26214c85d6ff936a920f747abf0464f47e47
 [submodule "external/glfw"]
 	url = https://github.com/glfw/glfw.git
 	active = true
+[pull]
+	rebase = false
