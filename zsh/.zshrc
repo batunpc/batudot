@@ -55,20 +55,26 @@ alias :q=exit # to exit the terminal mode in nvim
 alias ls="exa"
 alias cat="bat"
 alias grep='grep --color=auto'
-
 #for dotfiles
 alias config='git --git-dir=/Users/batu/Documents/.dotfiles/ --work-tree=/Users/batu/.config'
-
 # Useful aliases
 # ================
 alias myip='curl http://ipecho.net/plain;'
+# return the number of lines from ls
 alias countls='LS -A | wc -l'
-alias undo-git-reset-head="git reset 'HEAD@{1}'". #This reverts the effects of running git reset HEAD~.
-alias clock='tty-clock -S -s -b -c -D' # https://github.com/xorg62/tty-clock
+#This reverts the effects of running git reset HEAD~.
+alias undo-git-reset-head="git reset 'HEAD@{1}'". 
+# https://github.com/xorg62/tty-clock
+alias clock='tty-clock -S -s -b -c -D' 
+# Recursively delete `.DS_Store` files and python cache folders
+alias cleanup="find -E . -regex '.*(\.DS_Store|__pycache__|\.mypy_cache|\.pytest_cache).*' -ls -delete"
+# DOCKER ALIAS
+alias docker-clean-containers='docker container rm -f $(docker container ls -aq)'
+alias docker-clean-images='docker image rm -f $(docker image ls -aq)'
 # ===============================================================================
 
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 eval "$(pyenv init --path)"
 
@@ -86,3 +92,17 @@ eval "$(pyenv init --path)"
 # fi
 # unset __conda_setup
 #<<< conda initialize <<<
+
+# get local and external ip address
+ip() {
+  local ip=`ifconfig en0 | grep "inet " | grep -v 127.0.0.1 | awk '{print $2}'`
+  local locip extip
+
+  [ "$ip" != "" ] && locip=$ip || locip="inactive"
+
+  ip=`dig +short myip.opendns.com @resolver1.opendns.com`
+  [ "$ip" != "" ] && extip=$ip || extip="inactive"
+
+  printf '%11s: %s\n%11s: %s\n' "Local IP" $locip "External IP" $extip
+}
+
