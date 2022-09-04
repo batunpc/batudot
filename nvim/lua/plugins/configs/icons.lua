@@ -6,11 +6,6 @@ end
 
 local options = {
    override = {
-      default_icon = {
-         icon = "",
-         name = "Default",
-      },
-
       c = {
          icon = "",
          name = "c",

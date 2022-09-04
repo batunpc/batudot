@@ -3,13 +3,13 @@
 <div align="center">
 	<a href="https://nvchad.github.io/">Home</a>
   <span> • </span>
-    	<a href="https://nvchad.github.io/getting-started/setup">Install</a>
+    	<a href="https://nvchad.github.io/quickstart/install">Install</a>
   <span> • </span>
        	<a href="https://nvchad.github.io/contribute">Contribute</a>
   <span> • </span>
 	<a href="https://github.com/NvChad/NvChad#gift_heart-support">Support</a>
   <span> • </span>
-        <a href="https://nvchad.github.io/Extras">Extras</a>
+        <a href="https://nvchad.github.io/Features">Features</a>
   <p></p>
 </div> 
 
@@ -32,7 +32,7 @@
 ## Showcase
 
 <img src="https://github.com/NvChad/nvchad.github.io/blob/src/static/img/screenshots/dashboard.png">
-<img src="https://cdn.discordapp.com/attachments/610012460828852229/853933487295299584/unknown.png">
+<img src="https://github.com/NvChad/nvchad.github.io/blob/src/static/img/screenshots/main2.png">
 
 ( Zoom in the screenshot )
 
@@ -41,7 +41,7 @@
 
 ## What is it?
 
-- NvChad is a neovim config written in lua aiming to provide a base configuration with very beautiful UI and blazing fast startuptime (around 0.02 secs ~ 0.07 secs). We tweak UI plugins such as telescope, nvim-tree, bufferline etc well to provide an asethetic UI experience. 
+- NvChad is a neovim config written in lua aiming to provide a base configuration with very beautiful UI and blazing fast startuptime (around 0.02 secs ~ 0.07 secs). We tweak UI plugins such as telescope, nvim-tree, bufferline etc well to provide an aesthetic UI experience. 
 
 - Lazy loading is done 93% of the time meaning that plugins will not be loaded by default, they will be loaded only when required also at specific commands, events etc. This lowers the startuptime and it was like 0.07~ secs tested on an old pentium machine 1.4ghz + 4gb ram & HDD.
 
@@ -67,45 +67,42 @@
 
 Fast file tree:
 
-<kbd><img src="https://raw.githubusercontent.com/siduck/dotfiles/all/rice%20flex/nvimtree.png"></kbd><hr>
+<kbd><img src="https://github.com/NvChad/nvchad.github.io/blob/src/static/img/features/nvimtree.png"></kbd><hr>
 
 <h3> Telescope-nvim </h3>
 
 A fuzzy file finder, picker, sorter, previewer and much more:
 
-<kbd><img src="https://raw.githubusercontent.com/siduck/dotfiles/all/rice%20flex/tel.png"></kbd>
+<kbd><img src="https://github.com/NvChad/nvchad.github.io/blob/src/static/img/features/tel.png"></kbd><hr>
 
 <h3> Indent-blankline.nvim </h3>
 
 Adds indentline:
 
-<kbd><img src="https://raw.githubusercontent.com/siduck/dotfiles/all/rice%20flex/blanklineNvim.png"></kbd><hr>
+<kbd><img src="https://github.com/NvChad/nvchad.github.io/blob/src/static/img/features/blanklineNvim.png"></kbd><hr>
 
-<h3> Feline.nvim  </h3>
+<h3> Our own statusline written from scratch  </h3>
 
-Highly configurable statusline plugin:
+[NvChad UI](https://github.com/NvChad/ui)
 
-<kbd><img src="https://raw.githubusercontent.com/siduck/dotfiles/all/rice%20flex/statusline.png"></kbd><hr>
+<kbd><img src="https://github.com/NvChad/nvchad.github.io/blob/src/static/img/features/statusline.png"></kbd><hr>
+<kbd><img src="https://github.com/NvChad/nvchad.github.io/blob/src/static/img/features/statusline_modes.png"></kbd><hr>
 
-<h3> Nvim-bufferline.lua </h3>
+<h3> Tabufline (our own pertab bufferline) </h3>
 
-Better tab implementation:
-
-<kbd><img src="https://raw.githubusercontent.com/siduck/dotfiles/all/rice%20flex/bufferline.png"></kbd><hr>
+<kbd><img src="https://github.com/NvChad/nvchad.github.io/blob/src/static/img/features/tabufline1.png"></kbd><hr>
+<kbd><img src="https://github.com/NvChad/nvchad.github.io/blob/src/static/img/features/tabufline2.png"></kbd><hr>
+<kbd><img src="https://github.com/NvChad/nvchad.github.io/blob/src/static/img/features/tabufline3.png"></kbd><hr>
 
 <h3> Nvim-web-devicons </h3>
 
 Lua fork of Vim Devicons which offers more file icon customisability:
 
-<kbd><img src="https://raw.githubusercontent.com/siduck/dotfiles/all/rice%20flex/image.png"></kbd><hr>
+<kbd><img src="https://github.com/NvChad/nvchad.github.io/blob/src/static/img/features/devicons.png"></kbd><hr>
 
 <h3> Nvim-treesitter </h3
 
-Better syntax highlighting for programming languages (NvChad by default comes with Lua/bash treesitter parsers).
-
-Without/with Treesitter:
-
-<kbd><img src="https://raw.githubusercontent.com/siduck/dotfiles/all/rice%20flex/woTree.png"></kbd><hr>
+NeoVim Treesitter configurations and abstraction layer. We mostly use this for syntax highlighting. The pretty syntax highlighting you see in all of our screenshots has gotten possible due to treesitter
 
 </details>
 
@@ -114,12 +111,12 @@ Without/with Treesitter:
 - Many beautiful themes, theme toggler by [our base46 plugin](https://github.com/NvChad/base46)
 - Inbuilt terminal toggling & management with [Nvterm](https://github.com/NvChad/nvterm)
 - NvChad updater, hide & unhide terminal buffers with [NvChad extensions](https://github.com/NvChad/extensions)
+- Lightweight & performant ui plugin with [NvChad UI](https://github.com/NvChad/ui)
 - File navigation with [nvim-tree.lua](https://github.com/kyazdani42/nvim-tree.lua)
 - Managing tabs, buffers with [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)
 - Beautiful and configurable icons with [nvim-web-devicons](https://github.com/kyazdani42/nvim-web-devicons)
-- Pretty and functional statusline with [feline.nvim](https://github.com/Famiu/feline.nvim)
 - Git diffs and more with [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) 
-- NeoVim Lsp configuration with [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) and [lsp-installer](https://github.com/williamboman/nvim-lsp-installer/)
+- NeoVim Lsp configuration with [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) and [mason.nvim](https://github.com/williamboman/mason.nvim)
 - Autocompletion with [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
 - File searching, previewing image and text files and more with [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim).
 - Syntax highlighting with [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)

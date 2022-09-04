@@ -28,7 +28,7 @@ log-standup = !git log --since yesterday --pretty=short --author `git config use
 [receive "fsck"]
 	zeroPaddedFilemode = ignore
 [oh-my-zsh]
-	lastVersion = f7dc26214c85d6ff936a920f747abf0464f47e47
+	lastVersion = c0c011100885ca03531c1604e268fcd81c374f9c
 [submodule "external/glfw"]
 	url = https://github.com/glfw/glfw.git
 	active = true

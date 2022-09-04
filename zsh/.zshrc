@@ -38,8 +38,7 @@ ZSH_THEME="agnoster"
 DISABLE_AUTO_TITLE="true"
 SHELL_SESSIONS_DISABLE=1
 
-
-# LS colors direction to find the sh file 
+# LS colors direction to find the sh file
 source ~/.config/.LS_COLORS/lscolors.sh
 #zsh-syntax-highlighting
 source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -50,16 +49,40 @@ source $ZSH/oh-my-zsh.sh
 # path to p10k
 source ~/.config/powerlevel10k/powerlevel10k.zsh-theme
 
+source $HOME/.config/zsh/.p10k.zsh
+
 alias :q=exit # to exit the terminal mode in nvim
 alias ls="exa"
 alias cat="bat"
 alias grep='grep --color=auto'
+
+#for dotfiles
 alias config='git --git-dir=/Users/batu/Documents/.dotfiles/ --work-tree=/Users/batu/.config'
 
-source $HOME/.config/zsh/.p10k.zsh
+# Useful aliases
+# ================
+alias myip='curl http://ipecho.net/plain;'
+alias countls='LS -A | wc -l'
+alias undo-git-reset-head="git reset 'HEAD@{1}'". #This reverts the effects of running git reset HEAD~.
+
 # ===============================================================================
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 eval "$(pyenv init --path)"
+
+#>>> conda initialize >>>
+#!! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/opt/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/opt/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+#<<< conda initialize <<<
