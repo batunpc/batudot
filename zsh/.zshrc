@@ -64,7 +64,7 @@ alias config='git --git-dir=/Users/batu/Documents/.dotfiles/ --work-tree=/Users/
 alias myip='curl http://ipecho.net/plain;'
 alias countls='LS -A | wc -l'
 alias undo-git-reset-head="git reset 'HEAD@{1}'". #This reverts the effects of running git reset HEAD~.
-
+alias clock='tty-clock -S -s -b -c -D' # https://github.com/xorg62/tty-clock
 # ===============================================================================
 
 
