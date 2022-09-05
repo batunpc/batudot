@@ -59,7 +59,7 @@ alias grep='grep --color=auto'
 alias config='git --git-dir=/Users/batu/Documents/.dotfiles/ --work-tree=/Users/batu/.config'
 # Useful aliases
 # ================
-alias myip='curl http://ipecho.net/plain;'
+#alias myip='curl http://ipecho.net/plain;'
 # return the number of lines from ls
 alias countls='LS -A | wc -l'
 #This reverts the effects of running git reset HEAD~.
@@ -68,6 +68,8 @@ alias undo-git-reset-head="git reset 'HEAD@{1}'".
 alias clock='tty-clock -S -s -b -c -D' 
 # Recursively delete `.DS_Store` files and python cache folders
 alias cleanup="find -E . -regex '.*(\.DS_Store|__pycache__|\.mypy_cache|\.pytest_cache).*' -ls -delete"
+alias bu='brew update && brew upgrade'
+alias bcu='brew cu --all --yes --cleanup'
 # DOCKER ALIAS
 alias docker-clean-containers='docker container rm -f $(docker container ls -aq)'
 alias docker-clean-images='docker image rm -f $(docker image ls -aq)'
@@ -94,7 +96,7 @@ eval "$(pyenv init --path)"
 #<<< conda initialize <<<
 
 # get local and external ip address
-ip() {
+function myip() {
   local ip=`ifconfig en0 | grep "inet " | grep -v 127.0.0.1 | awk '{print $2}'`
   local locip extip
 
@@ -105,4 +107,3 @@ ip() {
 
   printf '%11s: %s\n%11s: %s\n' "Local IP" $locip "External IP" $extip
 }
-
