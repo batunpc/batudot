@@ -107,3 +107,15 @@ function myip() {
 
   printf '%11s: %s\n%11s: %s\n' "Local IP" $locip "External IP" $extip
 }
+
+# greet 
+function greet() {
+  local hour=$(date +"%H")
+  if [ $hour -lt 12 ] && [ $hour -ge 0 ]; then
+    echo "Good morning, $USER!"
+  elif [ $hour -lt 18 ] && [ $hour -ge 12 ]; then
+    echo "Good afternoon, $USER!"
+  else
+    echo "Good evening, $USER!"
+  fi
+}
