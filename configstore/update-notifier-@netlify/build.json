@@ -1,0 +1,10 @@
+{
+	"optOut": false,
+	"lastUpdateCheck": 1663918925289,
+	"update": {
+		"latest": "27.18.4",
+		"current": "27.18.1",
+		"type": "patch",
+		"name": "@netlify/build"
+	}
+}

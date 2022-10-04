@@ -28,9 +28,11 @@ log-standup = !git log --since yesterday --pretty=short --author `git config use
 [receive "fsck"]
 	zeroPaddedFilemode = ignore
 [oh-my-zsh]
-	lastVersion = c0c011100885ca03531c1604e268fcd81c374f9c
+	lastVersion = 037140d0914fab1cbb5e68aacaa35a9c839f7458
 [submodule "external/glfw"]
 	url = https://github.com/glfw/glfw.git
 	active = true
 [pull]
 	rebase = false
+[credential]
+	username = batunpc
