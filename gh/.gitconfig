@@ -16,11 +16,11 @@
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	
-log-standup = !git log --since yesterday --pretty=short --author `git config user.email`
 [core]
 	eol = lf
 	autocrlf = false
 	hooksPath = .husky
+	editor = code --wait
 [fsck]
 	zeroPaddedFilemode = ignore
 [fetch "fsck"]
@@ -28,11 +28,10 @@ log-standup = !git log --since yesterday --pretty=short --author `git config use
 [receive "fsck"]
 	zeroPaddedFilemode = ignore
 [oh-my-zsh]
-	lastVersion = 037140d0914fab1cbb5e68aacaa35a9c839f7458
-[submodule "external/glfw"]
-	url = https://github.com/glfw/glfw.git
-	active = true
+	lastVersion = 75cad33179f0d3aab148f84ccdb8d487c85d9b2e
 [pull]
 	rebase = false
 [credential]
 	username = batunpc
+
+log-standup = !git log --since yesterday --pretty=short --author `git config user.email`
