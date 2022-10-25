@@ -16,7 +16,9 @@
 					"shownDate": "2022-09-14T11:43:51.704Z"
 				},
 				"directDebuggingWithHermes": {},
-				"debuggingRNWAndMacOSApps": {},
+				"debuggingRNWAndMacOSApps": {
+					"shownDate": "2022-10-15T17:06:48.328Z"
+				},
 				"expoHostType": {},
 				"customEnvVariables": {}
 			},
@@ -24,16 +26,16 @@
 				"networkInspectorLogsColorTheme": {}
 			}
 		},
-		"lastExtensionUsageDate": "2022-10-09T19:57:13.710Z"
+		"lastExtensionUsageDate": "2022-10-23T05:01:21.062Z"
 	},
 	"surveyConfig": {
 		"shortPeriodToRemind": 30,
 		"longPeriodToRemind": 90,
 		"popCoveragePercent": 0.1,
 		"enabled": true,
-		"daysLeftBeforeSurvey": 26,
+		"daysLeftBeforeSurvey": 22,
 		"surveyName": "userSatisfactionSurvey",
 		"surveyUrl": "https://www.surveymonkey.com/r/6FJGVDV",
-		"lastExtensionUsageDate": "2022-10-09T19:57:14.270Z"
+		"lastExtensionUsageDate": "2022-10-23T05:01:21.353Z"
 	}
 }

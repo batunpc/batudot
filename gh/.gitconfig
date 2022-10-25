@@ -28,10 +28,7 @@
 [receive "fsck"]
 	zeroPaddedFilemode = ignore
 [oh-my-zsh]
-	lastVersion = 75cad33179f0d3aab148f84ccdb8d487c85d9b2e
+	lastVersion = 4fc25d5c0f378a7db180f283180e0c2e32714d21
 [pull]
 	rebase = false
-[credential]
-	username = batunpc
 
-log-standup = !git log --since yesterday --pretty=short --author `git config user.email`
