@@ -32,3 +32,5 @@
 [pull]
 	rebase = false
 
+[remote "origin"]
+	url = https://github.com/glific/waffle_gcs
