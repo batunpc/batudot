@@ -28,7 +28,7 @@
 [receive "fsck"]
 	zeroPaddedFilemode = ignore
 [oh-my-zsh]
-	lastVersion = 4fc25d5c0f378a7db180f283180e0c2e32714d21
+	lastVersion = e6a8cd32a36f3b6e00b82f1d06670d6376d6b3db
 [pull]
 	rebase = false
 
