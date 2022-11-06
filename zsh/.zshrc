@@ -49,7 +49,7 @@ source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 #Auto Suggestion
 #source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 # path to ohmyzsh
-#source $ZSH/oh-my-zsh.sh
+source $ZSH/oh-my-zsh.sh
 # path to p10k
 source ~/.config/powerlevel10k/powerlevel10k.zsh-theme
 
@@ -92,7 +92,7 @@ function myip() {
   ip=`dig +short myip.opendns.com @resolver1.opendns.com`
   [ "$ip" != "" ] && extip=$ip || extip="inactive"
 
-  printf '%11s: %s\n%11s: %s\n' "Local IP" $locip "External IP" $extip
+  printf '%11s: %s\n%11s: %s\n' "$(tput setaf 5)Local IP$(tput sgr0)" $locip "$(tput setaf 5)External IP$(tput sgr0)" $extip
 }
 
 
@@ -108,7 +108,9 @@ function greet() {
     echo "Good evening, $USER!"
   fi
 }
-
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 # # >>> conda initialize >>>
 # # !! Contents within this block are managed by 'conda init' !!
 # __conda_setup="$('/Users/batu/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
@@ -129,6 +131,9 @@ function greet() {
 # command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 # eval "$(pyenv init -)"
 
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="/opt/homebrew/opt/openssl@1.1/bin:$PATH"
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
