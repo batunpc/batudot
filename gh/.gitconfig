@@ -34,3 +34,8 @@
 
 [remote "origin"]
 	url = https://github.com/glific/waffle_gcs
+	gh-resolved = humphd/my-photohub
+[branch "issue-1"]
+	remote = https://github.com/SerpentBytes/my-photohub.git
+	pushRemote = https://github.com/SerpentBytes/my-photohub.git
+	merge = refs/heads/issue-1
