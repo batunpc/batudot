@@ -1,5 +1,5 @@
 # Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && . "$HOME/.fig/shell/zshrc.pre.zsh"
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 #===================
 #           _
 #   _______| |__
@@ -20,6 +20,8 @@ plugins=(
 
 # ===============================================================================
 #export MallocStackLogging=1 # for leaks debugging
+#export PATH="/Users/batu/opt/anaconda3/bin:$PATH"
+
 export HOMEBREW_NO_ANALYTICS=1
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 
@@ -70,6 +72,7 @@ alias config='git --git-dir=/Users/batu/Documents/.dotfiles/ --work-tree=/Users/
 alias countls='LS -A | wc -l'
 #This reverts the effects of running git reset HEAD~.
 alias undo-git-reset-head="git reset 'HEAD@{1}'". 
+alias undo-git-add="git restore --staged"
 # https://github.com/xorg62/tty-clock
 alias clock='tty-clock -S -s -b -c -D -n' 
 # Recursively delete `.DS_Store` files and python cache folders
@@ -92,8 +95,48 @@ function myip() {
   ip=`dig +short myip.opendns.com @resolver1.opendns.com`
   [ "$ip" != "" ] && extip=$ip || extip="inactive"
 
-  printf '%11s: %s\n%11s: %s\n' "Local IP" $locip "External IP" $extip
+  printf '%11s: %s\n%11s: %s\n' "$(tput setaf 5)Local IP$(tput sgr0)" $locip "$(tput setaf 5)External IP$(tput sgr0)" $extip
 }
 
+
+
+# greet 
+function greet() {
+  local hour=$(date +"%H")
+  if [ $hour -lt 12 ] && [ $hour -ge 0 ]; then
+    echo "Good morning, $USER!"
+  elif [ $hour -lt 18 ] && [ $hour -ge 12 ]; then
+    echo "Good afternoon, $USER!"
+  else
+    echo "Good evening, $USER!"
+  fi
+}
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+# # >>> conda initialize >>>
+# # !! Contents within this block are managed by 'conda init' !!
+# __conda_setup="$('/Users/batu/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+# if [ $? -eq 0 ]; then
+#     eval "$__conda_setup"
+# else
+#     if [ -f "/Users/batu/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+#         . "/Users/batu/opt/anaconda3/etc/profile.d/conda.sh"
+#     else
+#         export PATH="/Users/batu/opt/anaconda3/bin:$PATH"
+#     fi
+# fi
+# unset __conda_setup
+# # <<< conda initialize <<<
+
+
+# export PYENV_ROOT="$HOME/.pyenv"
+# command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init -)"
+
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="/opt/homebrew/opt/openssl@1.1/bin:$PATH"
+
 # Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && . "$HOME/.fig/shell/zshrc.post.zsh"
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"

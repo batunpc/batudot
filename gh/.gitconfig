@@ -16,11 +16,11 @@
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	
-log-standup = !git log --since yesterday --pretty=short --author `git config user.email`
 [core]
 	eol = lf
 	autocrlf = false
 	hooksPath = .husky
+	editor = code --wait
 [fsck]
 	zeroPaddedFilemode = ignore
 [fetch "fsck"]
@@ -28,9 +28,14 @@ log-standup = !git log --since yesterday --pretty=short --author `git config use
 [receive "fsck"]
 	zeroPaddedFilemode = ignore
 [oh-my-zsh]
-	lastVersion = c0c011100885ca03531c1604e268fcd81c374f9c
-[submodule "external/glfw"]
-	url = https://github.com/glfw/glfw.git
-	active = true
+	lastVersion = 5c950922bfe765ca77b9980bee1f1202cee520b6
 [pull]
 	rebase = false
+
+[remote "origin"]
+	url = https://github.com/glific/waffle_gcs
+	gh-resolved = humphd/my-photohub
+[branch "issue-1"]
+	remote = https://github.com/SerpentBytes/my-photohub.git
+	pushRemote = https://github.com/SerpentBytes/my-photohub.git
+	merge = refs/heads/issue-1
