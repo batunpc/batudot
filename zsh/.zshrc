@@ -11,6 +11,8 @@
 #brew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 # Welcome messages
+# call hr function
+
 fortune | lolcat
 echo ""
 plugins=(zsh-syntax-highlighting git)
@@ -60,7 +62,11 @@ source $HOME/.config/zsh/.p10k.zsh
 alias :q=exit # to exit the terminal mode in nvim
 alias ls="exa"
 alias cat="bat"
-alias grep='grep --color=auto'
+alias grep="grep --color=auto"
+alias fgrep="fgrep --color=auto"
+alias egrep="egrep --color=auto"
+# make less accept color codes and re-output them
+alias less="less -R"
 #for dotfiles
 alias config='git --git-dir=/Users/batu/Documents/.dotfiles/ --work-tree=/Users/batu/.config'
 # Useful aliases
@@ -81,7 +87,10 @@ alias docker-clean-containers='docker container rm -f $(docker container ls -aq)
 alias docker-clean-images='docker image rm -f $(docker image ls -aq)'
 # ===============================================================================
 
-
+# print a separator banner, as wide as the terminal
+function hr {
+  print ${(l:COLUMNS::=:)} | lolcat
+}
 # get local and external ip address
 function myip() {
   local ip=`ifconfig en0 | grep "inet " | grep -v 127.0.0.1 | awk '{print $2}'`
@@ -92,10 +101,13 @@ function myip() {
   ip=`dig +short myip.opendns.com @resolver1.opendns.com`
   [ "$ip" != "" ] && extip=$ip || extip="inactive"
 
-  printf '%11s: %s\n%11s: %s\n' "$(tput setaf 5)Local IP$(tput sgr0)" $locip "$(tput setaf 5)External IP$(tput sgr0)" $extip
+  printf '%11s: %s\n%11s: %s\n' "Local IP" $locip "External IP" $extip
 }
 
-
+timezsh() {
+  shell=${1-$SHELL}
+  for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
+}
 
 # greet 
 function greet() {
@@ -134,6 +146,8 @@ function greet() {
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="/opt/homebrew/opt/openssl@1.1/bin:$PATH"
+
+
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
