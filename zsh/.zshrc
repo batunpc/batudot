@@ -11,8 +11,6 @@
 #brew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 # Welcome messages
-# call hr function
-
 fortune | lolcat
 echo ""
 plugins=(zsh-syntax-highlighting git)
@@ -62,11 +60,7 @@ source $HOME/.config/zsh/.p10k.zsh
 alias :q=exit # to exit the terminal mode in nvim
 alias ls="exa"
 alias cat="bat"
-alias grep="grep --color=auto"
-alias fgrep="fgrep --color=auto"
-alias egrep="egrep --color=auto"
-# make less accept color codes and re-output them
-alias less="less -R"
+alias grep='grep --color=auto'
 #for dotfiles
 alias config='git --git-dir=/Users/batu/Documents/.dotfiles/ --work-tree=/Users/batu/.config'
 # Useful aliases
@@ -83,14 +77,19 @@ alias cleanup="find -E . -regex '.*(\.DS_Store|__pycache__|\.mypy_cache|\.pytest
 alias bu='brew update && brew upgrade'
 alias bcu='brew cu --all --yes --cleanup'
 # DOCKER ALIAS
-alias docker-clean-containers='docker container rm -f $(docker container ls -aq)'
 alias docker-clean-images='docker image rm -f $(docker image ls -aq)'
+alias docker-clean-containers='docker container rm -f $(docker container ls -aq)'
+# caffeinate
+alias caffeinate='caffeinate -d -i -m -s -u'
 # ===============================================================================
 
 # print a separator banner, as wide as the terminal
-function hr {
-  print ${(l:COLUMNS::=:)} | lolcat
+hr() {
+  local width=$(tput cols)
+  local fill=$(printf "%${width}s")
+  echo "${fill// /=}" | lolcat
 }
+
 # get local and external ip address
 function myip() {
   local ip=`ifconfig en0 | grep "inet " | grep -v 127.0.0.1 | awk '{print $2}'`
@@ -101,13 +100,9 @@ function myip() {
   ip=`dig +short myip.opendns.com @resolver1.opendns.com`
   [ "$ip" != "" ] && extip=$ip || extip="inactive"
 
-  printf '%11s: %s\n%11s: %s\n' "Local IP" $locip "External IP" $extip
+  printf '%11s: %s\n%11s: %s\n' "$(tput setaf 5)Local IP$(tput sgr0)" $locip "$(tput setaf 5)External IP$(tput sgr0)" $extip
 }
 
-timezsh() {
-  shell=${1-$SHELL}
-  for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
-}
 
 # greet 
 function greet() {
@@ -123,31 +118,10 @@ function greet() {
   export NVM_DIR="$HOME/.nvm"
   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-# # >>> conda initialize >>>
-# # !! Contents within this block are managed by 'conda init' !!
-# __conda_setup="$('/Users/batu/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-# if [ $? -eq 0 ]; then
-#     eval "$__conda_setup"
-# else
-#     if [ -f "/Users/batu/opt/anaconda3/etc/profile.d/conda.sh" ]; then
-#         . "/Users/batu/opt/anaconda3/etc/profile.d/conda.sh"
-#     else
-#         export PATH="/Users/batu/opt/anaconda3/bin:$PATH"
-#     fi
-# fi
-# unset __conda_setup
-# # <<< conda initialize <<<
-
-
-# export PYENV_ROOT="$HOME/.pyenv"
-# command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-# eval "$(pyenv init -)"
 
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="/opt/homebrew/opt/openssl@1.1/bin:$PATH"
-
-
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
