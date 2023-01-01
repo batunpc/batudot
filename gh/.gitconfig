@@ -14,28 +14,31 @@
 	process = git-lfs filter-process
 	required = true
 	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	
+	smudge = git-lfs smudge -- %f	
 [core]
 	eol = lf
 	autocrlf = false
-	hooksPath = .husky
-	editor = code --wait
+  hooksPath = .husky
+  editor = code --wait
+[oh-my-zsh]
+	lastVersion = 70c4e9de773e486c19fd82916bef1041819d72ec
+[alias]
+	l = log
+	lo = log --graph --decorate --all
+	ll = log --graph --decorate --oneline --all
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	la = log --pretty=format:'[%h] %cd - Committer: %cn (%ce), Author: %an (%ae)'
+	ls = ls-files
+	crds = config credential.helper store
+	ups = config --get remote.origin.url
+	yolo = !git commit -m \"$(curl -s whatthecommit.com/index.txt)\"
+	godsays = !git commit -m \"$(curl -s https://godsays.xyz)\"
+[commit]
+	template = ~/.git-commit-template
+	verbose = true
 [fsck]
 	zeroPaddedFilemode = ignore
 [fetch "fsck"]
 	zeroPaddedFilemode = ignore
 [receive "fsck"]
 	zeroPaddedFilemode = ignore
-[oh-my-zsh]
-	lastVersion = 5c950922bfe765ca77b9980bee1f1202cee520b6
-[pull]
-	rebase = false
-
-[remote "origin"]
-	url = https://github.com/glific/waffle_gcs
-	gh-resolved = humphd/my-photohub
-[branch "issue-1"]
-	remote = https://github.com/SerpentBytes/my-photohub.git
-	pushRemote = https://github.com/SerpentBytes/my-photohub.git
-	merge = refs/heads/issue-1

@@ -1,7 +1,7 @@
 {
 	"version": "1.10.0",
 	"tipsConfig": {
-		"daysLeftBeforeGeneralTip": 5,
+		"daysLeftBeforeGeneralTip": 6,
 		"firstTimeMinDaysToRemind": 4,
 		"firstTimeMaxDaysToRemind": 6,
 		"minDaysToRemind": 6,
@@ -24,22 +24,24 @@
 				"expoHostType": {
 					"shownDate": "2022-11-14T21:35:03.352Z"
 				},
-				"customEnvVariables": {}
+				"customEnvVariables": {
+					"shownDate": "2022-12-10T12:37:08.614Z"
+				}
 			},
 			"specificTips": {
 				"networkInspectorLogsColorTheme": {}
 			}
 		},
-		"lastExtensionUsageDate": "2022-11-14T20:51:51.309Z"
+		"lastExtensionUsageDate": "2022-12-10T12:37:08.613Z"
 	},
 	"surveyConfig": {
 		"shortPeriodToRemind": 30,
 		"longPeriodToRemind": 90,
 		"popCoveragePercent": 0.1,
 		"enabled": true,
-		"daysLeftBeforeSurvey": 16,
+		"daysLeftBeforeSurvey": 11,
 		"surveyName": "userSatisfactionSurvey",
 		"surveyUrl": "https://www.surveymonkey.com/r/6FJGVDV",
-		"lastExtensionUsageDate": "2022-11-14T21:35:03.468Z"
+		"lastExtensionUsageDate": "2022-12-10T12:37:09.422Z"
 	}
 }
