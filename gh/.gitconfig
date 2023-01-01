@@ -42,3 +42,5 @@
 	zeroPaddedFilemode = ignore
 [receive "fsck"]
 	zeroPaddedFilemode = ignore
+[pull]
+	rebase = true
